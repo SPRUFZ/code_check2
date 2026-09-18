@@ -1,5 +1,5 @@
-# Name:
-# Period:
+# Name:lukka
+# Period:PM
 
 # ============================================================
 # Python Skills Check — Slides 61–116
