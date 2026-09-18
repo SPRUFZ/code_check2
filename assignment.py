@@ -674,6 +674,14 @@ else:
 # Decreasing
 # OR
 # Not decreasing
+n1 = int(input("Enter the first whole number: "))
+n2 = int(input("Enter the second whole number: "))
+n3 = int(input("Enter the third whole number: "))
+
+if n1 > n2 and n2 > n3:
+    print("Decreasing")
+else:
+    print("Not decreasing")
 
 
 # TASK 28:
@@ -694,6 +702,15 @@ else:
 #
 # All different
 # if none match
+a = int(input("Enter the first whole number: "))
+b = int(input("Enter the second whole number: "))
+c = int(input("Enter the third whole number: "))
+if a == b and a == c:
+    print("All same")
+elif a == b or a == c or b == c:
+    print("Two same")
+else:
+    print("All different")
 
 
 # TASK 29:
@@ -713,7 +730,21 @@ else:
 #
 # THINK:
 # You should not assign a letter grade to an invalid score.
+user_score = int(input("Enter a score from 0 to 100: "))
 
+if user_score < 0 or user_score > 100:
+    print("Invalid score")
+else:
+    if user_score >= 90:
+        print("A")
+    elif user_score >= 80:
+        print("B")
+    elif user_score >= 70:
+        print("C")
+    elif user_score >= 60:
+        print("D")
+    else:
+        print("F")
 
 # ============================================================
 # SECTION 6 — FUNCTIONS BASICS
@@ -728,7 +759,10 @@ else:
 # Hello!
 #
 # Call it once.
+def say_hello():
+    print("Hello!")
 
+say_hello()
 
 # TASK 31:
 # Create a function named:
@@ -743,7 +777,12 @@ else:
 # Hello [name]
 #
 # Call it THREE times using different names.
+def greet_student(name):
+    print("Hello", name)
 
+greet_student("sigma")
+greet_student("lukka")
+greet_student("diddy")
 
 # TASK 32:
 # Create a function named:
@@ -759,7 +798,8 @@ else:
 # Print the sum of all three.
 #
 # Call it at least TWO times.
-
+def add_three(a, b, c):
+    print(a + b + c)
 
 # ============================================================
 # SECTION 7 — FUNCTIONS + CONDITIONALS
@@ -784,7 +824,16 @@ else:
 # 10
 # -5
 # 0
-
+def check_number(number):
+    if number > 0:
+        print("Positive")
+    elif number < 0:
+        print("Negative")
+    else:
+        print("Zero")
+check_number(10)
+check_number(-5)
+check_number(0)
 
 # TASK 34:
 # Create a function named:
@@ -801,7 +850,16 @@ else:
 # Odd
 #
 # Test it at least FOUR times.
+def check_even_odd(number):
+    if number % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
 
+check_even_odd(9)
+check_even_odd(36)
+check_even_odd(67)
+check_even_odd(68)
 
 # TASK 35:
 # Create a function named:
@@ -832,7 +890,15 @@ else:
 # 18
 # 64
 # 65
-
+def ticket_type(age):
+    if age < 13:
+        print("Child")
+    elif age < 18:
+        print("Teen")
+    elif age < 65:
+        print("Adult")
+    else:
+        print("Senior")
 
 # TASK 36:
 # Create a function named:
@@ -851,7 +917,13 @@ else:
 # find_highest(5, 20, 11)
 # find_highest(100, 25, 60)
 # find_highest(8, 9, 30)
-
+def find_highest(a, b, c):
+    if a >= b and a >= c:
+        print(a)
+    elif b >= a and b >= c:
+        print(b)
+    else:
+        print(c)
 
 # TASK 37:
 # Create a function named:
@@ -867,7 +939,13 @@ else:
 # WITHOUT using min(), print the lowest value.
 #
 # Test at least THREE times.
-
+def find_lowest(a, b, c):
+    if a <= b and a <= c:
+        print(a)
+    elif b <= a and b <= c:
+        print(b)
+    else:
+        print(c)
 
 # TASK 38:
 # Create a function named:
@@ -887,7 +965,13 @@ else:
 # find_middle(10, 30, 20)
 # find_middle(100, 5, 50)
 # find_middle(7, 9, 8)
-
+def find_middle(a, b, c):
+    if (a <= b and a >= c) or (a >= b and a <= c):
+        print(a)
+    elif (b <= a and b >= c) or (b >= a and b <= c):
+        print(b)
+    else:
+        print(c)
 
 # TASK 39:
 # Create a function named:
@@ -907,7 +991,13 @@ else:
 # All different
 #
 # Test all three situations.
-
+def compare_three(a, b, c):
+    if a == b and a == c:
+        print("All equal")
+    elif a == b or a == c or b == c:
+        print("Exactly two equal")
+    else:
+        print("All different")
 
 # TASK 40:
 # Create a function named:
@@ -937,7 +1027,13 @@ else:
 #
 # should still print:
 # In range
-
+def is_in_range(number, low, high):
+    if low > high:
+        low, high = high, low
+    if number >= low and number <= high:
+        print("In range")
+    else:
+        print("Out of range")
 
 # ============================================================
 # SECTION 8 — RETURN VALUES
@@ -962,7 +1058,11 @@ else:
 # multiplication_result
 #
 # Print multiplication_result.
+def multiply_numbers(num1, num2):
+    return num1 * num2
 
+multiplication_result = multiply_numbers(6, 7)
+print(multiplication_result)
 
 # TASK 42:
 # Create a function named:
@@ -985,6 +1085,14 @@ else:
 # bigger
 #
 # Print bigger.
+def larger_number(a, b):
+    if a >= b:
+        return a
+    else:
+        return b
+larger_number(15, 40)
+bigger = larger_number(15, 40)
+print(bigger)
 
 
 # TASK 43:
@@ -1007,6 +1115,16 @@ else:
 # highest_result
 #
 # Print highest_result.
+def highest_of_three(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+highest_of_three(18, 42, 27)
+highest_result = highest_of_three(18, 42, 27)
+print(highest_result)
 
 
 # TASK 44:
@@ -1023,7 +1141,13 @@ else:
 # WITHOUT using min(), RETURN the lowest value.
 #
 # Test it at least THREE times.
-
+def lowest_of_three(a, b, c):
+    if a <= b and a <= c:
+        return a
+    elif b <= a and b <= c:
+        return b
+    else:
+        return c
 
 # TASK 45:
 # Create a function named:
@@ -1044,7 +1168,13 @@ else:
 # middle_of_three(10, 30, 20)
 # middle_of_three(50, 5, 25)
 # middle_of_three(8, 7, 9)
-
+def middle_of_three(a, b, c):
+    if (a <= b and a >= c) or (a >= b and a <= c):
+        return a
+    elif (b <= a and b >= c) or (b >= a and b <= c):
+        return b
+    else:
+        return c
 
 # ============================================================
 # SECTION 9 — RETURN + REUSE
@@ -1084,8 +1214,24 @@ else:
 #
 # IMPORTANT:
 # Do NOT repeat the highest/lowest logic outside the functions.
-
-
+def get_highest(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+def get_lowest(a, b, c):
+    if a <= b and a <= c:
+        return a
+    elif b <= a and b <= c:
+        return b
+    else:
+        return c
+highest = get_highest(a, b, c)
+lowest = get_lowest(a, b, c)
+difference = highest - lowest
+print(difference)
 # TASK 47:
 # Create:
 #
@@ -1105,7 +1251,32 @@ else:
 #
 # or:
 # Small spread
+a = 9
+b = 4
+c = 15
+def get_highest(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+def get_lowest(a, b, c):
+    if a <= b and a <= c:
+        return a
+    elif b <= a and b <= c:
+        return b
+    else:
+        return c
+highest = get_highest(a, b, c)
+lowest = get_lowest(a, b, c)
+difference = highest - lowest
+if difference > 10:
+    print("Large spread")
+else:
+    print("Small spread")
 
+    
 
 # TASK 48:
 # Create a function named:
@@ -1132,7 +1303,18 @@ else:
 #
 # THINK:
 # How can one function call feed into another?
+def best_of_two(a, b):
+    if a >= b:
+        return a
+    else:
+        return b
 
+a = 12
+b = 50
+c = 31
+
+highest = best_of_two(best_of_two(a, b), c)
+print(highest)
 
 # TASK 49:
 # Create a function named:
@@ -1152,7 +1334,18 @@ else:
 # lowest
 #
 # Print lowest.
+def worst_of_two(a, b):
+    if a <= b:
+        return a
+    else:
+        return b
 
+a = 22
+b = 5
+c = 17
+
+lowest = worst_of_two(worst_of_two(a, b), c)
+print(lowest)
 
 # ============================================================
 # SECTION 10 — LOGIC CHALLENGES
@@ -1174,7 +1367,14 @@ else:
 # b is not middle
 #
 # Do NOT calculate the middle value separately first.
+a= 12
+b = 7
+c = 19
 
+if (b > a and b < c) or (b < a and b > c):
+    print("b is middle")
+else:
+    print("b is not middle")
 
 # TASK 51:
 # Create:
@@ -1190,7 +1390,14 @@ else:
 #
 # or:
 # Highest is unique
+a = 25
+b = 25
+c = 10
 
+if (a > b and a > c) or (a == b and a > c) or (a == c and a > b):
+    print("Highest is tied")
+else:
+    print("Highest is unique")
 
 # TASK 52:
 # Create:
@@ -1206,7 +1413,16 @@ else:
 # Neither
 #
 # Print ONE result.
+a = 3
+b = 8
+c = 5
 
+if a < b and b < c:
+    print("Strictly increasing")
+elif a > b and b > c:
+    print("Strictly decreasing")
+else:
+    print("Neither")
 
 # TASK 53:
 # Create:
@@ -1228,7 +1444,14 @@ else:
 # Non-decreasing
 # OR
 # Not non-decreasing
+a = 5
+b = 5
+c = 10
 
+if a <= b and b <= c:
+    print("Non-decreasing")
+else:
+    print("Not non-decreasing")
 
 # TASK 54:
 # Create:
@@ -1252,7 +1475,14 @@ else:
 # Entry denied
 #
 # Read this one carefully.
+age = 17
+has_permission = True
+has_ticket = False
 
+if age >= 18 or (age < 18 and has_permission and has_ticket):
+    print("Entry allowed")
+else:
+    print("Entry denied")
 
 # TASK 55:
 # Create:
@@ -1275,7 +1505,15 @@ else:
 # Fail
 #
 # Only ONE message should print.
+score = int(input("Enter a score: "))
+attendance = int(input("Enter attendance: "))
 
+if score >= 90 and attendance >= 90:
+    print("Honors")
+elif score >= 70 and attendance >= 75:
+    print("Pass")
+else:
+    print("Fail")
 
 # ============================================================
 # SECTION 11 — DEBUGGING CHALLENGES
@@ -1292,7 +1530,7 @@ else:
 #
 # if score >= 70:
 #     print("Passing")
-# if score >= 90:
+# elif score >= 90:
 #     print("Excellent")
 
 
@@ -1303,7 +1541,7 @@ else:
 #
 # age = 18
 #
-# if age > 18:
+# if age >= 18:
 #     print("Adult")
 # else:
 #     print("Minor")
@@ -1319,7 +1557,7 @@ else:
 #
 # number = 20
 #
-# if number > 10 and number < 20:
+# if number >= 10 and number <= 20:
 #     print("Valid")
 # else:
 #     print("Invalid")
@@ -1332,7 +1570,7 @@ else:
 #
 # def add_numbers(a, b):
 #     total = a + b
-#     print(total)
+#     return (total)
 #
 # result = add_numbers(4, 6)
 # print(result)
@@ -1346,7 +1584,7 @@ else:
 #     answer = a - b
 #
 # result = subtract(20, 8)
-# print(result)
+# print(answer)
 
 
 # ============================================================
@@ -1394,7 +1632,36 @@ else:
 # analyze_three_numbers(20, 20, 20)
 # analyze_three_numbers(5, 5, 9)
 # analyze_three_numbers(-5, 0, -12)
-
+def analyze_three_numbers(a, b, c):
+    if a >= b and a >= c:
+        highest = a
+    elif b >= a and b >= c:
+        highest = b
+    else:
+        highest = c
+    if a <= b and a <= c:
+        lowest = a
+    elif b <= a and b <= c:
+        lowest = b
+    else:
+        lowest = c
+    if (a <= b and a >= c) or (a >= b and a <= c):
+        middle = a
+    elif (b <= a and b >= c) or (b >= a and b <= c):
+        middle = b
+    else:
+        middle = c
+    
+    print("Highest:", highest)
+    print("Lowest:", lowest)
+    print("Middle:", middle)
+    
+    if a == b and a == c:
+        print("All equal")
+    elif a == b or a == c or b == c:
+        print("Exactly two equal")
+    else:
+        print("All different")
 
 # ============================================================
 # FINAL BOSS 2 — NUMBER RANKING
@@ -1428,7 +1695,34 @@ else:
 # - Do NOT use sorting
 #
 # Your program must still work if the order of inputs changes.
+user_num1 = int(input("give a whole number: "))
+user_num2 = int(input("give a whole number: "))
+user_num3 = int(input("give a whole number: "))
 
+if user_num1 <= user_num2 and user_num1 <= user_num3:
+    print(user_num1)
+    if user_num2 <= user_num3:
+        print(user_num2)
+        print(user_num3)
+    else:
+        print(user_num3)
+        print(user_num2)
+elif user_num2 <= user_num1 and user_num2 <= user_num3:
+    print(user_num2)
+    if user_num1 <= user_num3:
+        print(user_num1)
+        print(user_num3)
+    else:
+        print(user_num3)
+        print(user_num1)
+else:
+    print(user_num3)
+    if user_num1 <= user_num2:
+        print(user_num1)
+        print(user_num2)
+    else:
+        print(user_num2)
+        print(user_num1)
 
 # ============================================================
 # FINAL BOSS 3 — FUNCTION REUSE
@@ -1466,7 +1760,41 @@ else:
 # Lowest: [lowest]
 #
 # Do NOT use min(), max(), or sorting.
+def get_highest(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
 
+def get_lowest(a, b, c):
+    if a <= b and a <= c:
+        return a
+    elif b <= a and b <= c:
+        return b
+    else:
+        return c
+
+def get_middle(a, b, c):
+    if (a <= b and a >= c) or (a >= b and a <= c):
+        return a
+    elif (b <= a and b >= c) or (b >= a and b <= c):
+        return b
+    else:
+        return c
+
+first = int(input("Enter the first whole number: "))
+second = int(input("Enter the second whole number: "))
+third = int(input("Enter the third whole number: "))
+
+highest = get_highest(first, second, third)
+lowest = get_lowest(first, second, third)
+middle = get_middle(first, second, third)
+
+print("Highest:", highest)
+print("Middle:", middle)
+print("Lowest:", lowest)
 
 # ============================================================
 # FINAL BOSS 4 — CONDITIONAL DECISION SYSTEM
@@ -1503,7 +1831,13 @@ else:
 # THINK:
 # The first person should still be accepted even though
 # the interview value is "fail".
-
+def admission_decision(grade, attendence, interview):
+    if grade >= 90 and attendance >= 90:
+        print("Accepted")
+    elif grade >= 80 and attendance >= 80 and interview == "pass":
+        print("Accepted")
+    else:
+        print("Not accepted")
 
 # ============================================================
 # FINAL BOSS 5 — THINK CAREFULLY
@@ -1536,7 +1870,23 @@ else:
 # - Do NOT use sorting
 #
 # Your logic should still work if the variable values change.
+a = 15
+b = 8
+c = 15
 
+if a >= b and a >= c:
+    highest = a
+elif b >= a and b >= c:
+    highest = b
+else:
+    highest = c
+
+print("Highest:", highest)
+
+if (a == b and a > c) or (a == c and a > b):
+    print("Tied highest")
+else:
+    print("Unique highest")
 
 
 
@@ -1598,7 +1948,11 @@ else:
 #
 # CHALLENGE:
 # The same function must be able to convert in BOTH directions.
-
+def convert_temperature(temperature, scale):
+    if scale == "C":
+        return temperature * 1.8 + 32
+    else:
+        return (temperature - 32) / 1.8
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 67 — KELVIN CONVERTER
@@ -1636,7 +1990,12 @@ else:
 #
 # THINK:
 # One input can require TWO calculations before you return the answer.
-
+def to_kelvin(temperature, scale):
+    if scale == "C":
+        return temperature + 273.15
+    else:
+        celsius = (temperature - 32) / 1.8
+        return celsius + 273.15
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 68 — PARKING GARAGE
@@ -1670,7 +2029,15 @@ else:
 #
 # THINK:
 # Do not accidentally charge $3 for the first hour.
+def parking_cost(hours):
+    if hours == 1:
+        return 5
+    elif hours <= 8:
+        return 5 + (hours - 1) * 3
+    else:
+        return 25
 
+    
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 69 — MOVIE TICKET TOTAL
@@ -1705,7 +2072,18 @@ else:
 # THINK:
 # First determine the base ticket price.
 # Then decide whether something must be added.
-
+def movie_total(age, is_weekend):
+    if age < 13:
+        base_price = 8
+    elif age <= 64:
+        base_price = 12
+    else:
+        base_price = 7
+    
+    if is_weekend:
+        return base_price + 3
+    else:
+        return base_price
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 70 — ELECTRIC BILL
@@ -1739,6 +2117,11 @@ else:
 #
 # IMPORTANT:
 # For 120 units, only 20 units should be charged at $0.20.
+def electric_bill(usage):
+    if usage <= 100:
+        return usage * 0.10
+    else:
+        return 100 * 0.10 + (usage - 100) * 0.20
 
 
 # ------------------------------------------------------------
@@ -1775,7 +2158,15 @@ else:
 #
 # THINK:
 # A year divisible by 100 is NOT automatically a leap year.
-
+def is_leap_year(year):
+    if year % 400 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 72 — TRIANGLE VALIDITY
@@ -1811,7 +2202,11 @@ else:
 #
 # Notice that 2 + 3 = 5 is NOT enough.
 # It must be GREATER THAN.
-
+def valid_triangle(a, b, c):
+    if a + b > c and a + c > b and b + c > a:
+        return True
+    else:
+        return False
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 73 — TRIANGLE TYPE
@@ -1854,7 +2249,15 @@ else:
 #
 # THINK:
 # Check whether the triangle is valid BEFORE classifying it.
-
+def triangle_type(a, b, c):
+    if a + b <= c or a + c <= b or b + c <= a:
+        return "invalid"
+    elif a == b and b == c:
+        return "equilateral"
+    elif a == b or a == c or b == c:
+        return "isosceles"
+    else:
+        return "scalene"
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 74 — ROCK PAPER SCISSORS
@@ -1909,7 +2312,13 @@ else:
 #
 # This is a logic problem.
 # There are several possible combinations.
-
+def rps_winner(player1, player2):
+    if player1 == player2:
+        return "tie"
+    elif (player1 == "rock" and player2 == "scissors") or (player1 == "scissors" and player2 == "paper") or (player1 == "paper" and player2 == "rock"):
+        return "player1"
+    else:
+        return "player2"
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 75 — CLOSEST TO 100
@@ -1942,7 +2351,25 @@ else:
 # THINK:
 # A number may be above OR below 100.
 # You will need to determine each number's distance from 100.
-
+def closest_to_100(a, b):
+    if a == b:
+        distance_a = 100 - a if a <= 100 else a - 100
+        distance_b = 100 - b if b <= 100 else b - 100
+        if distance_a == distance_b:
+            return -1
+        elif distance_a < distance_b:
+            return a
+        else:
+            return b
+    else:
+        distance_a = 100 - a if a <= 100 else a - 100
+        distance_b = 100 - b if b <= 100 else b - 100
+        if distance_a == distance_b:
+            return -1
+        elif distance_a < distance_b:
+            return a
+        else:
+            return b
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 76 — DELIVERY FEE
@@ -1977,7 +2404,13 @@ else:
 #
 # THINK:
 # A large order does NOT always mean free delivery.
-
+def delivery_fee(order_total, distance):
+    if order_total >= 50 and distance <= 5:
+        return 0
+    elif distance <= 5:
+        return 5
+    else:
+        return 10
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 77 — ATM WITHDRAWAL
@@ -2009,7 +2442,11 @@ else:
 # can_withdraw(500, 0)    -> False
 #
 # ALL conditions must be true.
-
+def can_withdraw(balance, amount):
+    if amount > 0 and amount <= balance and amount % 20 == 0:
+        return True
+    else:
+        return False
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 78 — RESTAURANT TIP
@@ -2048,7 +2485,13 @@ else:
 #
 # THINK:
 # RETURN only the TIP, not the final bill.
-
+def tip_amount(bill, service):
+    if service == "poor":
+        return bill * 0.10
+    elif service == "good":
+        return bill * 0.18
+    else:
+        return bill * 0.25
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 79 — PHONE BATTERY WARNING
@@ -2086,7 +2529,15 @@ else:
 #
 # THINK:
 # The order of the conditions matters.
-
+def battery_status(battery, is_charging):
+    if battery <= 5 and not is_charging:
+        return "critical"
+    elif battery <= 20 and not is_charging:
+        return "low"
+    elif is_charging:
+        return "charging"
+    else:
+        return "normal"
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 80 — TAXI FARE
@@ -2118,7 +2569,12 @@ else:
 #
 # Build the final answer from the rules instead of
 # hard-coding different totals.
-
+def taxi_fare(miles, is_night):
+    base_fare = 4
+    fare = base_fare + miles * 2
+    if is_night:
+        fare += 5
+    return fare
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 81 — GAME DAMAGE
@@ -2153,7 +2609,13 @@ else:
 #
 # THINK:
 # The critical hit should happen AFTER defense is removed.
-
+def calculate_damage(attack, defense, critical):
+    damage = attack - defense
+    if damage < 0:
+        damage = 0
+    if critical:
+        damage *= 2
+    return damage
 
 # ------------------------------------------------------------
 # LEETCODE-STYLE TASK 82 — STORE COUPON
@@ -2191,7 +2653,13 @@ else:
 #
 # THINK:
 # A 25% discount means the customer pays 75% of the price.
-
+def final_price(price, coupon):
+    if coupon == "none":
+        return price
+    elif coupon == "SAVE10":
+        return price * 0.90
+    elif coupon == "SAVE25":
+        return price * 0.75
 
 # ============================================================
 # GIT CHECK
